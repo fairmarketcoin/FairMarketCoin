@@ -1,0 +1,48 @@
+{
+    "base_coin": {
+        "name": "bytecoin",
+        "git": "https://github.com/amjuarez/bytecoin.git"
+    },
+    "core": {
+        "SEED_NODES": [
+            "18.219.49.140:42025",
+			"18.217.237.155:42025"
+        ],
+        "EMISSION_SPEED_FACTOR": 18,
+        "DIFFICULTY_TARGET": 120,
+        "CRYPTONOTE_DISPLAY_DECIMAL_POINT": 11,
+        "MONEY_SUPPLY": "18446744073709551615",
+        "GENESIS_BLOCK_REWARD": "368934881474191040",
+        "DEFAULT_DUST_THRESHOLD": 1000000,
+        "MINIMUM_FEE": 1000000,
+        "CRYPTONOTE_MINED_MONEY_UNLOCK_WINDOW": 10,
+        "CRYPTONOTE_BLOCK_GRANTED_FULL_REWARD_ZONE": 100000,
+        "MAX_TRANSACTION_SIZE_LIMIT": 100000,
+        "CRYPTONOTE_PUBLIC_ADDRESS_BASE58_PREFIX": 420,
+        "DIFFICULTY_CUT_V1": 60,
+        "DIFFICULTY_CUT_V2": 60,
+        "DIFFICULTY_CUT": 0,
+        "DIFFICULTY_LAG_V1": 15,
+        "DIFFICULTY_LAG_V2": 15,
+        "DIFFICULTY_LAG": 0,
+        "DIFFICULTY_WINDOW_V1": 720,
+        "DIFFICULTY_WINDOW_V2": 720,
+        "DIFFICULTY_WINDOW": 17,
+        "ZAWY_DIFFICULTY_BLOCK_INDEX": 30,
+		"P2P_DEFAULT_PORT": 42025,
+        "RPC_DEFAULT_PORT": 42026,
+        "BYTECOIN_NETWORK": "9c27ba06-6a75-88eb-9b48-772fc3d82b66",
+        "CRYPTONOTE_NAME": "FairMarketCoin",
+        "DAEMON_NAME": "FairMarketCoind",
+        "GENESIS_COINBASE_TX_HEX": "010a01ff0001c0bd94dc9e8aae8f0502fd32adbbd1f11c40691e40882e28ae385264f5ad4d9745cde944383a71bb876d2101d042b1059a53ced7832e247ce650a801128dbee4622d045e9cf826b733e28767",
+        "CHECKPOINTS": "",
+        "MAX_BLOCK_SIZE_INITIAL": 100000
+    },
+    "extensions": [
+        "core/bytecoin.json",
+        "print-genesis-tx.json",
+        "versionized-parameters.json",
+        "zawy-difficulty-algorithm.json",
+        "genesis-block-reward.json"
+    ]
+}
