@@ -55,7 +55,7 @@ const size_t   DIFFICULTY_CUT                                = 60;  // timestamp
 const size_t   DIFFICULTY_LAG                                = 15;  // !!!
 static_assert(2 * DIFFICULTY_CUT <= DIFFICULTY_WINDOW - 2, "Bad DIFFICULTY_WINDOW or DIFFICULTY_CUT");
 
-const size_t   MAX_BLOCK_SIZE_INITIAL                        =  20 * 1024;
+const size_t   MAX_BLOCK_SIZE_INITIAL                        =  200 * 1024;
 const uint64_t MAX_BLOCK_SIZE_GROWTH_SPEED_NUMERATOR         = 100 * 1024;
 const uint64_t MAX_BLOCK_SIZE_GROWTH_SPEED_DENOMINATOR       = 365 * 24 * 60 * 60 / DIFFICULTY_TARGET;
 
@@ -101,8 +101,8 @@ const size_t   BLOCKS_IDS_SYNCHRONIZING_DEFAULT_COUNT        =  10000;  //by def
 const size_t   BLOCKS_SYNCHRONIZING_DEFAULT_COUNT            =  100;    //by default, blocks count in blocks downloading
 const size_t   COMMAND_RPC_GET_BLOCKS_FAST_MAX_COUNT         =  1000;
 
-const int      P2P_DEFAULT_PORT                              =  42025;
-const int      RPC_DEFAULT_PORT                              =  42026;
+const int      P2P_DEFAULT_PORT                              =  35334;
+const int      RPC_DEFAULT_PORT                              =  35335;
 
 const size_t   P2P_LOCAL_WHITE_PEERLIST_LIMIT                =  1000;
 const size_t   P2P_LOCAL_GRAY_PEERLIST_LIMIT                 =  5000;
@@ -117,11 +117,11 @@ const uint32_t P2P_DEFAULT_CONNECTION_TIMEOUT                = 5000;          //
 const uint32_t P2P_DEFAULT_PING_CONNECTION_TIMEOUT           = 2000;          // 2 seconds
 const uint64_t P2P_DEFAULT_INVOKE_TIMEOUT                    = 60 * 2 * 1000; // 2 minutes
 const size_t   P2P_DEFAULT_HANDSHAKE_INVOKE_TIMEOUT          = 5000;          // 5 seconds
-const char     P2P_STAT_TRUSTED_PUB_KEY[] = "afcd42206d98788d4c4e29c6126c1dd200b745bf78cf783fa746a8dfafcf5bb9";
+const char     P2P_STAT_TRUSTED_PUB_KEY[] = "";
 
 const char* const SEED_NODES[] = { 
-	"18.217.237.155:42025",
-	"18.219.49.140:42025" };
+	"18.217.237.155:35334",
+	"18.219.49.140:35334" };
 
 struct CheckpointData {
   uint32_t index;
@@ -129,7 +129,7 @@ struct CheckpointData {
 };
 
 const CheckpointData CHECKPOINTS[] = {
-  {991,  "2852d325a326250b0bc449f1d72d7d9041493fc7c29a1a3f5b848dc3c0f22f91"},
+  
   
 };
 } // CryptoNote
