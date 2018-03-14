@@ -35,7 +35,7 @@ const size_t   BLOCKCHAIN_TIMESTAMP_CHECK_WINDOW             = 60;
 
 // MONEY_SUPPLY - total number coins to be generated
 const uint64_t MONEY_SUPPLY                                  = static_cast<uint64_t>(-1);
-const unsigned EMISSION_SPEED_FACTOR                         = 18;
+const unsigned EMISSION_SPEED_FACTOR                         = 19;   // Adjusted during initial testing from 18
 static_assert(EMISSION_SPEED_FACTOR <= 8 * sizeof(uint64_t), "Bad EMISSION_SPEED_FACTOR");
 
 const size_t   CRYPTONOTE_REWARD_BLOCKS_WINDOW               = 100;
@@ -71,8 +71,8 @@ const size_t   FUSION_TX_MIN_INPUT_COUNT                     = 12;
 const size_t   FUSION_TX_MIN_IN_OUT_COUNT_RATIO              = 4;
 
 const uint32_t KEY_IMAGE_CHECKING_BLOCK_INDEX                = 0;
-const uint32_t UPGRADE_HEIGHT_V2                             = 1;
-const uint32_t UPGRADE_HEIGHT_V3                             = 2;
+const uint32_t UPGRADE_HEIGHT_V2                             = 2;
+const uint32_t UPGRADE_HEIGHT_V3                             = 1600;
 const unsigned UPGRADE_VOTING_THRESHOLD                      = 90;               // percent
 const uint32_t UPGRADE_VOTING_WINDOW                         = EXPECTED_NUMBER_OF_BLOCKS_PER_DAY;  // blocks
 const uint32_t UPGRADE_WINDOW                                = EXPECTED_NUMBER_OF_BLOCKS_PER_DAY;  // blocks
@@ -98,7 +98,7 @@ const uint8_t  BLOCK_MINOR_VERSION_0                         =  0;
 const uint8_t  BLOCK_MINOR_VERSION_1                         =  1;
 
 const size_t   BLOCKS_IDS_SYNCHRONIZING_DEFAULT_COUNT        =  10000;  //by default, blocks ids count in synchronizing
-const size_t   BLOCKS_SYNCHRONIZING_DEFAULT_COUNT            =  100;    //by default, blocks count in blocks downloading
+const size_t   BLOCKS_SYNCHRONIZING_DEFAULT_COUNT            =  128;    //by default, blocks count in blocks downloading
 const size_t   COMMAND_RPC_GET_BLOCKS_FAST_MAX_COUNT         =  1000;
 
 const int      P2P_DEFAULT_PORT                              =  35334;
@@ -109,7 +109,7 @@ const int      RPC_DEFAULT_PORT                              =  35335;
 const size_t   P2P_LOCAL_WHITE_PEERLIST_LIMIT                =  1000;
 const size_t   P2P_LOCAL_GRAY_PEERLIST_LIMIT                 =  5000;
 
-const size_t   P2P_CONNECTION_MAX_WRITE_BUFFER_SIZE          = 32 * 1024 * 1024; // 32 MB
+const size_t   P2P_CONNECTION_MAX_WRITE_BUFFER_SIZE          = 64 * 1024 * 1024; // 64 MB
 const uint32_t P2P_DEFAULT_CONNECTIONS_COUNT                 = 8;
 const size_t   P2P_DEFAULT_WHITELIST_CONNECTIONS_PERCENT     = 70;
 const uint32_t P2P_DEFAULT_HANDSHAKE_INTERVAL                = 60;            // seconds
@@ -131,8 +131,13 @@ struct CheckpointData {
   const char* blockId;
 };
 
-const std::initializer_list<CheckpointData> CHECKPOINTS =
-	{};
+const std::initializer_list<CheckpointData> CHECKPOINTS = {
+	{  621, "9bcf53bb42913b6f4565bf011da8fd454ce3782808dcbadd9936eff40790b683"},
+	{  622, "717ba2b6bfe5565fce65cc41838c9dcc04f39b85eaf7cda85847200f50623aa1"},
+	{  623, "2b2dcab34bb304bf09e376a6e34c624c42f0552e3c6ec2f7f0a4553d87a0e4e8"},
+	{ 1559, "c6153881f93b82e34052f5933837eba6cdeaa211d57d8939b03065ef82b71f19"}
+	
+};
 }
  // CryptoNote
 

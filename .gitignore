@@ -1,7 +1,6 @@
 .DS_Store
 /build
 /tags
-/newtest
 .idea
 .ycm_extra_conf.py
 .ycm_extra_conf.pyc

@@ -41,6 +41,8 @@ struct Configuration {
 
   std::string containerFile;
   std::string containerPassword;
+  std::string secretViewKey;
+  std::string secretSpendKey;
   std::string logFile;
   std::string serverRoot;
 
@@ -50,6 +52,7 @@ struct Configuration {
   bool unregisterService;
   bool testnet;
   bool printAddresses;
+  bool syncFromZero;
 
   size_t logLevel;
 };
