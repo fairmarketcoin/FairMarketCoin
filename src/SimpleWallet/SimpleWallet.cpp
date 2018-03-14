@@ -72,7 +72,6 @@ const command_line::arg_descriptor<std::string> arg_daemon_address = { "daemon-a
 const command_line::arg_descriptor<std::string> arg_daemon_host = { "daemon-host", "Use daemon instance at host <arg> instead of localhost", "" };
 const command_line::arg_descriptor<std::string> arg_password = { "password", "Wallet password", "", true };
 const command_line::arg_descriptor<uint16_t> arg_daemon_port = { "daemon-port", "Use daemon instance at port <arg> instead of 35334", 0 };
-const command_line::arg_descriptor<bool>  arg_SYNC_FROM_ZERO  = {"SYNC_FROM_ZERO", "Sync from block 0. Use for premine wallet or brainwallet", false};
 const command_line::arg_descriptor<uint32_t> arg_log_level = { "set_log", "", INFO, true };
 const command_line::arg_descriptor<bool> arg_testnet = { "testnet", "Used to deploy test nets. The daemon must be launched with --testnet flag", false };
 const command_line::arg_descriptor< std::vector<std::string> > arg_command = { "command", "" };
@@ -553,14 +552,8 @@ bool simple_wallet::init(const boost::program_options::variables_map& vm) {
     fail_msg_writer() << "you can't specify 'generate-new-wallet' and 'wallet-file' arguments simultaneously";
     return false;
   }
-  
-   std::string walletFileName;
-	sync_from_zero = command_line::get_arg(vm, arg_SYNC_FROM_ZERO);
-  if (sync_from_zero) {
-    sync_from_height = 0;
-  }
 
-  
+  std::string walletFileName;
   if (!m_generate_new.empty()) {
     std::string ignoredString;
     WalletHelper::prepareFileNames(m_generate_new, ignoredString, walletFileName);

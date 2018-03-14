@@ -44,6 +44,7 @@ public:
   uint64_t blockFutureTimeLimit() const { return m_blockFutureTimeLimit; }
 
   uint64_t moneySupply() const { return m_moneySupply; }
+  uint64_t finalSubsidy() const { return m_finalSubsidy; }
   unsigned int emissionSpeedFactor() const { return m_emissionSpeedFactor; }
 
   size_t rewardBlocksWindow() const { return m_rewardBlocksWindow; }
@@ -145,6 +146,7 @@ private:
   uint64_t m_blockFutureTimeLimit;
 
   uint64_t m_moneySupply;
+  uint64_t m_finalSubsidy;
   unsigned int m_emissionSpeedFactor;
 
   size_t m_rewardBlocksWindow;
